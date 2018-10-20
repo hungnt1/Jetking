@@ -45,7 +45,6 @@ Trong đó :
 
 - Dựa vào MAC Address của cổng mạng để chọn WAN interface và LAN interface 
 ![](https://i.imgur.com/VszWDU2.png)
-![](https://i.imgur.com/ZXspqlY.png)
 ![](https://i.imgur.com/hIRHE4l.png)
 - Truy cập vào giao diện WEB
 ![](https://i.imgur.com/1lqpjjf.png)
