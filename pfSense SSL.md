@@ -129,6 +129,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
  # 3 :  Thực hiện kết nối trên Computer Client
 
 *OpenVPN Client yêu cầu DOT NET Framework từ 4.0 trở lên*
+
 - Cài đặt Package đã được Export từ pfSense
 ![](https://i.imgur.com/1T8aHL6.png)
 ![](https://i.imgur.com/dUabpIX.png)
@@ -139,7 +140,6 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 ![](https://i.imgur.com/x0agRaG.png)
 
 - Mở phần mềm , double click vào icon ở góc phải. Xuất hiện một màn hình login. 
-Sử dụng user và password được cấp phát từ pfSense OpenVPN Server
 ![](https://i.imgur.com/gOmzagD.png)
 
 - Sau khi kết nối thành công sẽ có kết quả như sau :
