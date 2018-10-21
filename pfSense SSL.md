@@ -65,7 +65,7 @@ B2; Tạo một rule mới `easyrule` truy cập Web UI
 
 - Cài đặt IP cho LAN Interface cho pfSense
 ![](https://i.imgur.com/oR4yxQ4.png)
-Cài đặt trên Windown Server 2012
+- Cài đặt trên Windown Server 2012
 ![](https://i.imgur.com/V5T9bBe.png)
 - Truy cập WEB UI tại `https://192.168.230.254` với user : admin và password : pfsense 
 Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ qua bước này )
