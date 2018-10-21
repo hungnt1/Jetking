@@ -135,6 +135,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 - Quá trình cài đặt sẽ cài đặt thêm `Tap Driver` , chọn `install` để OPENVPN Client có thể họat động
 ![](https://i.imgur.com/z4iXAco.png)
 
+- Quá trình cài đặt thành 
 ![](https://i.imgur.com/x0agRaG.png)
 
 - Mở phần mềm , double click vào icon ở góc phải. Xuất hiện một màn hình login. 
