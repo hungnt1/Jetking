@@ -126,8 +126,6 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 
 
 
-
-
  # 3 :  Thực hiện kết nối trên Computer Client
 
 *OpenVP Client yêu cầu DOT NET Framework từ 4.0 trở lên*
@@ -148,9 +146,9 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 
 - Kiểm tra Network adapter
 ![](https://i.imgur.com/NaAslAg.png)
-	Trong đó : đã xuất hiện một TUN interface nắm trong Subnet Tunnel đã cấu hình từ trước `10.22.20.0/24`
+   Trong đó : đã xuất hiện một TUN interface nắm trong Subnet Tunnel đã cấu hình từ trước `10.22.20.0/24`
 - Kiểm thử đương đi của gói tin khi đến Windows Server 2012 đứng sau pfSense
 ![](https://i.imgur.com/UNpejA3.png)
-	Trong đó : Gói tin đi đến Gateway của Tunnel đã cài đặt từ trước. 
+   Trong đó : Gói tin đi đến Gateway của Tunnel đã cài đặt từ trước. 
 - Kiểm thử `Remote Desktop`  đến Windows Server 
 ![](https://i.imgur.com/VogEBK4.png)
