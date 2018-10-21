@@ -125,10 +125,9 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 ![](https://i.imgur.com/tDkj5Ie.png)
 
 
+# 3 :  Thực hiện kết nối trên Computer Client
 
- # 3 :  Thực hiện kết nối trên Computer Client
 
-*OpenVPN Client yêu cầu DOT NET Framework từ 4.0 trở lên*
 
 - Cài đặt Package đã được Export từ pfSense
 ![](https://i.imgur.com/dUabpIX.png)
