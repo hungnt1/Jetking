@@ -1,4 +1,5 @@
 
+
 # Cài đặt, cấu hình pfSense VPN Tunnel cho DMZ ZOE
 
 
@@ -16,12 +17,12 @@ PfSene được biết đến là một tường lửa mềm, một dự án ngu
 - Cung cấp giải pháp Wireless Portal
 
 
-## 2. Xây dựng VPN SSL Tunnel trên pfSense
+# 2. Xây dựng VPN SSL Tunnel trên pfSense
 
-### 2.1 : Mô hình triển khai
+## 2.1 : Mô hình triển khai
 ![](https://i.imgur.com/sQMW2AP.png)
 
-## 2.2 . Cài đặt pfSense
+## 2.2 . Cài đặt pfSense 
 
 Có thể cài đặt pfSense nhiều phiên bản khác nhau trên trường khác nhau 
 Tải ISO tại : https://www.pfsense.org/download/
@@ -75,7 +76,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 ![](https://i.imgur.com/xndRyfS.png)
 ## 2.3. Cài đặt OpenVPN SSL Remote access
 
-## 2.3.1:  Khởi tạo Certificate trên Pfsense
+### 2.3.1:  Khởi tạo Certificate trên Pfsense
 
 - Khởi tạo một CA tại `System -> Cert. Manager->CA`
 ![](https://i.imgur.com/TRvV4Q9.png)
@@ -84,7 +85,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 ![](https://i.imgur.com/mKFhsLj.png)
 ![](https://i.imgur.com/GnuR0FN.png)
 
-## 2.3.2: Khởi tạo OpenVPN Server SSL Remote Access
+### 2.3.2: Khởi tạo OpenVPN Server SSL Remote Access
 - Tạo một VPN Server tại `VPN -> OPENVPN -> Server `
 
 - **General Information**
@@ -99,21 +100,21 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 ![](https://i.imgur.com/VBN00uK.png)
 	Trong đó : 
 	- IPv4 Tunnel Network : dải  mạng  sử dụng cho VPN Tunnel
-	- IPv4 Local network: subnet , hoặc địa chỉ IP có thể tham gia vào Tunnel
+	- IPv4 Local network: subnet , hoặc địa chỉ IP có thể tham gia vào Tunnel, chấp nhận các kết nối từ xa
 - **Client Setting**
 ![](https://i.imgur.com/AegF1xH.png)
 
 - **Advanced Configuration** : cấu cấu hình bổ sung ( bỏ qua ) 
 
 
-## 2.3.3: Cấu hình Rule cho OPENVPN
+### 2.3.3: Cấu hình Rule cho OPENVPN
 
 - Trên Interface WAN mở cổng UDP/1194 để có thể tạo kết nối VPN 
 ![](https://i.imgur.com/Ph57mJu.png)
 
 - Trên Openvpn Interface tạo một Rule `any any` để chấp nhận mọi kết nối qua Tunnel
 ![](https://i.imgur.com/lIFMK11.png)
-## 2.3.4: Xuất cấu hình cho OPENVPN Client
+### 2.3.4: Xuất cấu hình cho OPENVPN Client
 
 - Tạo User và CE trên pfSense tại `System -> User manager `
 ![](https://i.imgur.com/8rcSbAl.png)
@@ -127,5 +128,29 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 
 
 
+ # 3 :  Thực hiện kết nối trên Computer Client
 
+*OpenVP Client yêu cầu DOT NET Framework từ 4.0 trở lên*
+- Cài đặt Package đã được Export từ pfSense
+![](https://i.imgur.com/1T8aHL6.png)
+![](https://i.imgur.com/dUabpIX.png)
 
+- Quá trình cài đặt sẽ cài đặt thêm `Tap Driver` , chọn `install` để OPENVPN Client có thể họat động
+![](https://i.imgur.com/z4iXAco.png)
+
+![](https://i.imgur.com/x0agRaG.png)
+
+- Mở phần mềm , double click vào icon ở góc phải. Xuất hiện một màn hình login. Sử dụng user và password được cấp phát từ pfSense OpenVPN Server
+![](https://i.imgur.com/gOmzagD.png)
+
+- Sau khi kết nối thành công sẽ có kết quả như sau :
+![](https://i.imgur.com/9ZN9EZF.png)
+
+- Kiểm tra Network adapter
+![](https://i.imgur.com/NaAslAg.png)
+	Trong đó : đã xuất hiện một TUN interface nắm trong Subnet Tunnel đã cấu hình từ trước `10.22.20.0/24`
+- Kiểm thử đương đi của gói tin khi đến Windows Server 2012 đứng sau pfSense
+![](https://i.imgur.com/UNpejA3.png)
+	Trong đó : Gói tin đi đến Gateway của Tunnel đã cài đặt từ trước. 
+- Kiểm thử `Remote Desktop`  đến Windows Server 
+![](https://i.imgur.com/VogEBK4.png)
