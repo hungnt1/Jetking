@@ -51,18 +51,6 @@ Trong đó :
 - Truy cập vào giao diện WEB
 ![](https://i.imgur.com/1lqpjjf.png)
 
-NOTE : 
-- Khi thiết lập pfSense mà không thể truy cập vào giao diện LAN, có một số tùy chọn để cho phép truy cập vào webinterface. bằng cổng WAN
-B1: Tắt `packet filter` bằng `pfctl d` :`pfctl` sẽ tự động bật lại khi set rule mới 
-
-** Nên set rule mới khi đã vào đc WEB UI để đảm bảo có thể truy cập từ WAN Interface**
-![](https://i.imgur.com/agxOL97.png)
-B2; Tạo một rule mới `easyrule` truy cập Web UI
-![](https://i.imgur.com/rob8par.png)
-- Trong đó :
-	- `easyrule pass wan tcp any any 443` : cho phép truy cập WEB UI đến WAN 443
-	- `easyrule pass wan tcp any any 80` : cho phép truy cập WEB UI đến WAN 80
-	- `easyrule pass wan icmp any any` : cho phép ping đến cổng WAN
 
 - Cài đặt IP cho LAN Interface cho pfSense
 ![](https://i.imgur.com/oR4yxQ4.png)
@@ -74,6 +62,20 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 
 - Do quá đây quá trình làm LAB nên cần cấu hình `Reserved Networks` tại `Interface -> WLAN`
 ![](https://i.imgur.com/xndRyfS.png)
+
+NOTE : 
+- Khi thiết lập pfSense mà không thể truy cập vào giao diện LAN, có một số tùy chọn để cho phép truy cập vào WEB UI. bằng cổng WAN
+B1: Tắt `packet filter` bằng `pfctl d` :`pfctl` sẽ tự động bật lại khi set rule mới 
+
+**Nên set rule mới khi đã vào đc WEB UI để đảm bảo có thể truy cập từ WAN Interface**
+![](https://i.imgur.com/agxOL97.png)
+B2; Tạo một rule mới `easyrule` truy cập Web UI
+![](https://i.imgur.com/rob8par.png)
+- Trong đó :
+	- `easyrule pass wan tcp any any 443` : cho phép truy cập WEB UI đến WAN 443
+	- `easyrule pass wan tcp any any 80` : cho phép truy cập WEB UI đến WAN 80
+	- `easyrule pass wan icmp any any` : cho phép ping đến cổng WAN
+
 ## 2.3. Cài đặt OpenVPN SSL Remote access
 
 ### 2.3.1:  Khởi tạo Certificate trên Pfsense
