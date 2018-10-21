@@ -144,9 +144,8 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 - Sau khi kết nối thành công sẽ có kết quả như sau :
 ![](https://i.imgur.com/9ZN9EZF.png)
 
-- Kiểm tra Network adapter
+- Kiểm tra Network adapter, đã xuất hiện một TUN interface nắm trong Subnet Tunnel đã cấu hình từ trước `10.22.20.0/24`
 ![](https://i.imgur.com/NaAslAg.png)
-Trong đó : đã xuất hiện một TUN interface nắm trong Subnet Tunnel đã cấu hình từ trước `10.22.20.0/24`
 
 - Kiểm thử đương đi của gói tin khi đến Windows Server 2012 đứng sau pfSense
 ![](https://i.imgur.com/UNpejA3.png)
