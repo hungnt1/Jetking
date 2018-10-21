@@ -75,7 +75,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 ![](https://i.imgur.com/xndRyfS.png)
 ## 2.3. Cài đặt OpenVPN SSL Remote access
 
-## 2.1. Khởi tạo Certificate trên VPN
+## 2.3.1:  Khởi tạo Certificate trên Pfsense
 
 - Khởi tạo một CA tại `System -> Cert. Manager->CA`
 ![](https://i.imgur.com/TRvV4Q9.png)
@@ -84,7 +84,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 ![](https://i.imgur.com/mKFhsLj.png)
 ![](https://i.imgur.com/GnuR0FN.png)
 
-## 2.2. Khởi tạo OpenVPN Server SSL Remote Access
+## 2.3.2: Khởi tạo OpenVPN Server SSL Remote Access
 - Tạo một VPN Server tại `VPN -> OPENVPN -> Server `
 
 - **General Information**
@@ -106,14 +106,14 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 - **Advanced Configuration** : cấu cấu hình bổ sung ( bỏ qua ) 
 
 
-## 2.3 . Cấu hình Rule cho Openvpn
+## 2.3.3: Cấu hình Rule cho OPENVPN
 
 - Trên Interface WAN mở cổng UDP/1194 để có thể tạo kết nối VPN 
 ![](https://i.imgur.com/Ph57mJu.png)
 
 - Trên Openvpn Interface tạo một Rule `any any` để chấp nhận mọi kết nối qua Tunnel
 ![](https://i.imgur.com/lIFMK11.png)
-## 2.4. Xuất khai cấu hình cho Client
+## 2.3.4: Xuất cấu hình cho OPENVPN Client
 
 - Tạo User và CE trên pfSense tại `System -> User manager `
 ![](https://i.imgur.com/8rcSbAl.png)
