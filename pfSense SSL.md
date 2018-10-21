@@ -128,7 +128,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 
  # 3 :  Thực hiện kết nối trên Computer Client
 
-*OpenVP Client yêu cầu DOT NET Framework từ 4.0 trở lên*
+*OpenVPN Client yêu cầu DOT NET Framework từ 4.0 trở lên*
 - Cài đặt Package đã được Export từ pfSense
 ![](https://i.imgur.com/1T8aHL6.png)
 ![](https://i.imgur.com/dUabpIX.png)
@@ -138,13 +138,15 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 
 ![](https://i.imgur.com/x0agRaG.png)
 
-- Mở phần mềm , double click vào icon ở góc phải. Xuất hiện một màn hình login. Sử dụng user và password được cấp phát từ pfSense OpenVPN Server
+- Mở phần mềm , double click vào icon ở góc phải. Xuất hiện một màn hình login. 
+Sử dụng user và password được cấp phát từ pfSense OpenVPN Server
 ![](https://i.imgur.com/gOmzagD.png)
 
 - Sau khi kết nối thành công sẽ có kết quả như sau :
 ![](https://i.imgur.com/9ZN9EZF.png)
 
-- Kiểm tra Network adapter, đã xuất hiện một TUN interface nắm trong Subnet Tunnel đã cấu hình từ trước `10.22.20.0/24`
+- Kiểm tra Network adapter
+đã xuất hiện một TUN interface nắm trong Subnet Tunnel đã cấu hình từ trước `10.22.20.0/24`
 ![](https://i.imgur.com/NaAslAg.png)
 
 - Kiểm thử đương đi của gói tin khi đến Windows Server 2012 đứng sau pfSense
