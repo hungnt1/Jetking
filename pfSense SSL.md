@@ -132,6 +132,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 
 - Cài đặt Package đã được Export từ pfSense
 ![](https://i.imgur.com/1T8aHL6.png)
+
 ![](https://i.imgur.com/dUabpIX.png)
 
 - Quá trình cài đặt sẽ cài đặt thêm `Tap Driver` , chọn `install` để OPENVPN Client có thể họat động
@@ -146,7 +147,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 ![](https://i.imgur.com/9ZN9EZF.png)
 
 - Kiểm tra Network adapter
-đã xuất hiện một TUN interface nắm trong Subnet Tunnel đã cấu hình từ trước `10.22.20.0/24`
+đã xuất hiện một TUN interface nắm trong Subnet Tunnel đã cấu hình từ trước.
 ![](https://i.imgur.com/NaAslAg.png)
 
 - Kiểm thử đương đi của gói tin khi đến Windows Server 2012 đứng sau pfSense
