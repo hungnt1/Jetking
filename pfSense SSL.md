@@ -71,7 +71,7 @@ B2; Tạo một rule mới `easyrule` truy cập Web UI
 Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ qua bước này )
 ![](https://i.imgur.com/9TMR4bN.png)
 
-- Do quá đây quá trình làm LAB nên cần cấu hình `Reserved Networks` tại `Interface -> Wlan`
+- Do quá đây quá trình làm LAB nên cần cấu hình `Reserved Networks` tại `Interface -> WLAN`
 ![](https://i.imgur.com/xndRyfS.png)
 ## 2.3. Cài đặt OpenVPN SSL Remote access
 
