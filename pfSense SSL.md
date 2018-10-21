@@ -125,11 +125,11 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 ![](https://i.imgur.com/tDkj5Ie.png)
 
 
-# 3 :  Thực hiện kết nối trên Computer Client
-
+# 3. Thực hiện kết nối trên Computer Client
 
 
 - Cài đặt Package đã được Export từ pfSense
+
 ![](https://i.imgur.com/dUabpIX.png)
 
 - Quá trình cài đặt sẽ cài đặt thêm `Tap Driver` , chọn `install` để OPENVPN Client có thể họat động
