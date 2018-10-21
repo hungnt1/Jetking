@@ -1,5 +1,5 @@
 
-# Cài đặt, cấu hình pfSense VPN Tunnel cho DMZ ZONE
+# Cài đặt, cấu hình pfSense VPN Tunnel cho DMZ ZOE
 
 
 ## 1. Giới thiệu pfSense
@@ -214,9 +214,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 - Tạo một VPN Server tại `VPN -> OPENVPN -> Server `
 
 - **General Information**
-![](https://i.imgur.com/I2aGZjy.png
-
-)
+![](https://i.imgur.com/i0kmOHs.png)
 - **Cryptographic Settings**
 ![](https://i.imgur.com/ubJ8rFw.png)
 
@@ -236,21 +234,20 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 
 ## 2.3 . Cấu hình Rule cho Openvpn
 
-- Trên Interface WAN mở cổng UDP/1194 để các máy ngoài có thể VPN vào
+- Trên Interface WAN mở cổng UDP/1194 để có thể tạo kết nối VPN 
 ![](https://i.imgur.com/Ph57mJu.png)
 
-
+- Trên Openvpn Interface tạo một Rule `any any` để chấp nhận mọi kết nối qua Tunnel
+![](https://i.imgur.com/lIFMK11.png)
 ## 2.4. Xuất khai cấu hình cho Client
 
+- Tạo User và CE trên pfSense tại `System -> User manager `
+![](https://i.imgur.com/8rcSbAl.png)
+![](https://i.imgur.com/XuL6UgN.png)
 - Cài đặt `OpenVPN` plugin cho pfSense
 ![](https://i.imgur.com/BcdtxMH.png)
-
-- Khởi tạo một CE User từ CA `internal-ssl`
-![](https://i.imgur.com/Kzst8pf.png)
-
-
-- Export Openvpn tại `VPN->OpenVPN->Client Export`
-![](https://i.imgur.com/ztnyE68.png)
+- Export Openvpn Windows Installer cho User `it2` tại `VPN->OpenVPN->Client Export`
+![](https://i.imgur.com/tDkj5Ie.png)
 
 
 
