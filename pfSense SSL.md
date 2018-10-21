@@ -131,8 +131,6 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 *OpenVPN Client yêu cầu DOT NET Framework từ 4.0 trở lên*
 
 - Cài đặt Package đã được Export từ pfSense
-![](https://i.imgur.com/1T8aHL6.png)
-
 ![](https://i.imgur.com/dUabpIX.png)
 
 - Quá trình cài đặt sẽ cài đặt thêm `Tap Driver` , chọn `install` để OPENVPN Client có thể họat động
