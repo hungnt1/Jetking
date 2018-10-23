@@ -20,7 +20,7 @@ PfSene được biết đến là một tường lửa mềm, một dự án ngu
 
 # 2. Xây dựng VPN SSL Tunnel trên pfSense
 
-## 2.1 : Mô hình triển khai Site to Site
+## 2.1. Mô hình triển khai Site to Site
 ![](https://i.imgur.com/sQMW2AP.png)
 
 ## 2.2 . Cài đặt pfSense trên 2 SITE
@@ -51,7 +51,7 @@ Trong đó :
 
 - Truy cập vào giao diện WEB
 ![](https://i.imgur.com/1lqpjjf.png)
-## 2.3 . Cấu hình IP trên SITE Hà Nội
+## 2.3. Cấu hình IP trên SITE Hà Nội
 - Cài đặt IP cho LAN Interface cho pfSense
 ![](https://i.imgur.com/oR4yxQ4.png)
 - Cài đặt trên IP trên  Windows Server 2012
@@ -92,7 +92,7 @@ B2; Tạo một rule mới `easyrule` truy cập Web UI
 
 ## 2.5. Cài đặt OpenVPN SSL trên SITE Hà Nội
 
-### 2.5.1:  Khởi tạo Certificate trên Pfsense
+### 2.5.1.  Khởi tạo Certificate trên Pfsense
 
 - Khởi tạo một CA tại `System -> Cert. Manager->CA`
 ![](https://i.imgur.com/TRvV4Q9.png)
@@ -103,9 +103,12 @@ B2; Tạo một rule mới `easyrule` truy cập Web UI
 ![](https://i.imgur.com/GnuR0FN.png)
 
 -   Tạo User `it2` và CE cho user `it2` trên pfSense tại  `System -> User manager`[![](https://camo.githubusercontent.com/923df6997f87b650e834e70bad5e8a229ba68dd3/68747470733a2f2f692e696d6775722e636f6d2f3872635362416c2e706e67)](https://camo.githubusercontent.com/923df6997f87b650e834e70bad5e8a229ba68dd3/68747470733a2f2f692e696d6775722e636f6d2f3872635362416c2e706e67)[![](https://camo.githubusercontent.com/2a8e7b2fef32df16f185366051fe232695d46c7d/68747470733a2f2f692e696d6775722e636f6d2f58754c3655674e2e706e67)](https://camo.githubusercontent.com/2a8e7b2fef32df16f185366051fe232695d46c7d/68747470733a2f2f692e696d6775722e636f6d2f58754c3655674e2e706e67)
-
-### 2.5.2: Khởi tạo OpenVPN Server SSL Peer to Peer 
+	Trong đó :
+	- `it-ce-internal-ssl` : sử dụng tài khoản để xác thực chính CE này
+	
+### 2.5.2. Khởi tạo OpenVPN Server SSL Peer to Peer 
 - Tạo một VPN Server tại `VPN -> OPENVPN -> Server`
+
 ** Cấu hình **
 
 - **General Information**
@@ -128,10 +131,74 @@ B2; Tạo một rule mới `easyrule` truy cập Web UI
 	- IPv4 Tunnel Network : Subnet sử dụng cho Tunnel , bao gồm tunnel gateway và các client
 	- IPv4 Local Network : Subnet có thể tham gia vào Tunnel, có thể remote từ các site khác
 
-### 2.5.2:: Cấu hình Rule cho OPENVPN
+### 2.5.3. Cấu hình Rule cho OPENVPN
 
 -   Trên Interface WAN mở cổng UDP/1194 để có thể tạo kết nối VPN  [![](https://camo.githubusercontent.com/75a5a29897168bc0dd49d1f139eaa476bd4b620b/68747470733a2f2f692e696d6775722e636f6d2f506835376d4a752e706e67)](https://camo.githubusercontent.com/75a5a29897168bc0dd49d1f139eaa476bd4b620b/68747470733a2f2f692e696d6775722e636f6d2f506835376d4a752e706e67)
     
 -   Trên OPENVPN Interface tạo một Rule  `any any`  để chấp nhận mọi kết nối qua Tunnel  [![](https://camo.githubusercontent.com/8f5e8772401843ff538920ca46c1719d3a71ff5b/68747470733a2f2f692e696d6775722e636f6d2f6c49464d4b31312e706e67)](https://camo.githubusercontent.com/8f5e8772401843ff538920ca46c1719d3a71ff5b/68747470733a2f2f692e696d6775722e636f6d2f6c49464d4b31312e706e67)
 
-## 2.5. Cài đặt OpenVPN SSL trên SITE Hà Nội
+## 2.6. Cài đặt OpenVPN SSL Client trên SITE HCM
+
+### 2.6.1.  Lưu thông tin CA và CE  và TLS Key từ site Hà Nội
+
+- *Có thể sử dụng Notepad hoặc editor bất kì để lưu lại dữ liệu cho quá trình cài đặt*
+
+- Để có thể lấy thông tin của CA, sử dụng `Action -> Edit CA` , sau đó lưu tại `Certificate data` và `Certificate Private Key` từ  `internal-ssl` 
+![](https://i.imgur.com/iAQOXjv.png)
+
+- Để có thể lấy thông tin của CE `it-ce-internal-ssl` của user `it2`
+	Trong đó 
+	- Để lấy `Certificate Data` sử dụng `Action -> Export Certificate`,  lưu file dưới dạng *.txt và lưu dữ liệu lại
+	-  Để lấy `Private Data` sử dụng `Action -> Export Key` , lưu lại dữ liệu trong file 
+![](https://i.imgur.com/jalbRZG.png)
+
+- Lưu `TLS Key` của OpenVPN Server tại  `VPN -> OpenVPN -> Server -> Action -> Edit -> TLS Key`
+
+
+### 2.6.2. Khởi tạo CA và CE mới từ các KEY của Site Hà Nội
+
+-  Sử dụng `Certificate data` và `Certificate Private Key` được lưu lại từ Site Hà Nội để tạo một CA mới
+![](https://i.imgur.com/zyQ0VuU.png)
+
+- Sử dụng CE `Certificate data` và `Private key data` được Export từ Site Hà Nội để tạo một CE mới
+![](https://i.imgur.com/ZByDzfg.png)
+
+- CA và CE sau khi tạo thành công
+![](https://i.imgur.com/2OWOXML.png)
+![](https://i.imgur.com/dxuKUXj.png)
+
+### 2.6.3. Cấu hình OpenVPN SSL Client
+
+- Tạo một điểm Client mới tại `VPN -> OpenVPN -> Clients -> Add`
+
+**Cấu hình**
+
+- **General Information**
+![](https://i.imgur.com/8aHASmL.png)
+	Trong đó :
+	- Server mode : mode Peer to Peer server đang sử dụng
+	- Server host or address : địa chỉ IP WAN của Site Hà Nội
+	- Server port : port OpenVPN mà Site Hà Nội đang sử dụng
+- `User Authentication Settings`
+![](https://i.imgur.com/SwleQHZ.png)
+	Trong đó :
+	- username : tài khoản xác thực CE `it-ce-internal-ssl`trên Site Hà Nội
+	- password : mật khẩu của tài khoản trên
+
+- **Cryptographic Settings**
+![](https://i.imgur.com/2DEN6tY.png)
+	Trong đó :
+	- TLS Key : sử dụng TLS Key được export từ Site Hà Nội
+	- Peer Certificate Authority : CA được Export data từ Site Hà Nội
+	- Client Certificate : CE được Export data từ Site Hà Nội ( quan trọng : được xác thực bởi username và password tại `User Authentication Settings`)
+
+- **Tunnel Settings**
+![](https://i.imgur.com/h7ya6KT.png)
+Trong đó : 
+	- IPv4 Tunnel Network : Subnet được sử dụng trên Site Hà Nội
+	- IPv4 Remote Network : subnet có thể tham gia tunnel  ( mạng LAN ) , có thể remote từ site khác
+
+# 3. Kiểm tra, xác thực kết nối
+
+- Để kiểm tra kết nối thành công . Trên Site HCM sử dụng `Status -> OpenVPN ` kiểm tra
+![](https://i.imgur.com/zcxXCnK.png) 
