@@ -21,7 +21,7 @@ PfSene được biết đến là một tường lửa mềm, một dự án ngu
 # 2. Xây dựng VPN SSL Tunnel trên pfSense
 
 ## 2.1. Mô hình triển khai Site to Site
-![](https://i.imgur.com/sQMW2AP.png)
+![](https://i.imgur.com/SJjzhAi.png)
 
 ## 2.2 . Cài đặt pfSense trên 2 SITE
 
