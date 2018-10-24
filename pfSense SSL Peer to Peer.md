@@ -132,6 +132,9 @@ B2; Tạo một rule mới `easyrule` truy cập Web UI
 	- IPv4 Local Network : Subnet có thể tham gia vào Tunnel, có thể remote từ các site khác
 	- IPv4 Remote Network : Subnet site HCM có thể tham gia vào Tunne
 
+- Sau khi tạo cấu hình xong, sẽ xuất hiện 1 Network Port `ovpns1()`, gắn Port vào một interface và enable
+![](https://i.imgur.com/PoIF1h0.png)
+![](https://i.imgur.com/dj7c31D.png)
 ### 2.5.3. Cấu hình Rule cho OPENVPN
 
 -   Trên Interface WAN mở cổng UDP/1194 để có thể tạo kết nối VPN  [![](https://camo.githubusercontent.com/75a5a29897168bc0dd49d1f139eaa476bd4b620b/68747470733a2f2f692e696d6775722e636f6d2f506835376d4a752e706e67)](https://camo.githubusercontent.com/75a5a29897168bc0dd49d1f139eaa476bd4b620b/68747470733a2f2f692e696d6775722e636f6d2f506835376d4a752e706e67)
@@ -198,6 +201,10 @@ B2; Tạo một rule mới `easyrule` truy cập Web UI
 Trong đó : 
 	- IPv4 Tunnel Network : Subnet Tuneel được sử dụng trên Site Hà Nội
 	- IPv4 Remote Network : Network từ site Hà Nội có thể tham gia tunnel  ( mạng LAN ) 
+
+- Sau khi tạo cấu hình xong, sẽ xuất hiện 1 Network Port `ovpns1()`, gắn Port vào một interface và enable
+![](https://i.imgur.com/PoIF1h0.png)
+![](https://i.imgur.com/dj7c31D.png)
 
 # 3. Kiểm tra, xác thực kết nối
 
