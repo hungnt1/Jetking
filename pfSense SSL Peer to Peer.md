@@ -126,7 +126,7 @@ B2; Tạo một rule mới `easyrule` truy cập Web UI
 	- Peer Certificate Authority : CA để chứng thực giữa 2 site
 	- Server Certificate : CE được sử dụng cho Server
 - **Tunnel Settings**
-![](https://i.imgur.com/XZsnWPW.png)
+![](https://i.imgur.com/gykxq3b.png)
 	Trong đó :
 	- IPv4 Tunnel Network : Subnet sử dụng cho Tunnel , bao gồm tunnel gateway và các client
 	- IPv4 Local Network : Subnet có thể tham gia vào Tunnel, có thể remote từ các site khác
@@ -197,9 +197,9 @@ B2; Tạo một rule mới `easyrule` truy cập Web UI
 	- Client Certificate : CE được Export data từ Site Hà Nội ( quan trọng : được xác thực bởi username và password tại `User Authentication Settings`)
 
 - **Tunnel Settings**
-![](https://i.imgur.com/K87XmXt.png)
+![](https://i.imgur.com/Qonn7iq.png)
 Trong đó : 
-	- IPv4 Tunnel Network : Subnet Tuneel được sử dụng trên Site Hà Nội
+	- IPv4 Tunnel Network : Subnet Tunel được sử dụng trên Site Hà Nội
 	- IPv4 Remote Network : Network từ site Hà Nội có thể tham gia tunnel  ( mạng LAN ) 
 
 - Sau khi tạo cấu hình xong, sẽ xuất hiện 1 Network Port `ovpns1()`, gắn Port vào một interface và enable
@@ -209,4 +209,7 @@ Trong đó :
 # 3. Kiểm tra, xác thực kết nối
 
 - Để kiểm tra kết nối thành công . Trên Site HCM sử dụng `Status -> OpenVPN ` kiểm tra
-![](https://i.imgur.com/zcxXCnK.png) 
+![](https://i.imgur.com/fGZ3R27.png) 
+
+- Kiểm tra trên Hà Nội
+![](https://i.imgur.com/5ck1PV3.png)
