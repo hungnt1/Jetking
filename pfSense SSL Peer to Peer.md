@@ -214,5 +214,8 @@ Trong đó :
 - Kiểm tra trên Hà Nội
 ![](https://i.imgur.com/5ck1PV3.png)
 
+- Kiểm tra Ping từ Server về HCM
+![](https://i.imgur.com/znDAUdW.png)
+
 - Kiểm tra Ping Client từ HCM về Hà Nội
 ![](https://i.imgur.com/ViKDl2D.png)
