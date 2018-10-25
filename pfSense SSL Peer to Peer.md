@@ -23,6 +23,13 @@ PfSene được biết đến là một tường lửa mềm, một dự án ngu
 ## 2.1. Mô hình triển khai Site to Site
 ![](https://i.imgur.com/SJjzhAi.png)
 
+Site Hà Nội gồm :
+- WAN : 192.168.122.210/24
+- LAN : GW 192.168.230.254/24 - Static
+
+Site HCM gồm :
+- WAN : 192.168.122.174/24 - DHCP
+- LAN : GW 192.168.231.254 - Static
 ## 2.2 . Cài đặt pfSense trên 2 SITE
 
 Có thể cài đặt pfSense nhiều phiên bản khác nhau trên trường khác nhau 
