@@ -39,6 +39,7 @@ Site Đà Nẵng gồm :
 - WAN : 192.168.122.174/24 - DHCP
 - LAN : GW 192.168.232.254 - Static
 
+Cấu trúc mô hình : Tạo một Server riêng cho các Client, sử dụng Server Routing table để định tuyến
 
 ## 2.2 . Cài đặt pfSense trên 3 SITE
 
