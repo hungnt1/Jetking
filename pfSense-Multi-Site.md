@@ -195,7 +195,10 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
  ![](https://i.imgur.com/NjYlII9.png)
  ![](https://i.imgur.com/ZR7FM7a.png)
 
-**Lưu ý : Các rule này chỉ để thực hiện để làm LAB dễ dàng hơn, có thể tùy chỉnh để phù hợp môi trường **
+- Trên OPENVPN Interface , rule `any any`
+![](https://i.imgur.com/EcUrfBf.png)
+
+**Lưu ý : Các rule này chỉ để thực hiện để làm LAB dễ dàng hơn, có thể tùy chỉnh để phù hợp môi trường**
 
 ## 2.6. Cài đặt OpenVPN SSL Client trên SITE HCM
 
