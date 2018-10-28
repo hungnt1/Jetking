@@ -1,7 +1,7 @@
 
 
 
-# Cài đặt, cấu hình pfSense OpenVPN SSL kết nối  DMZ ZONE trên 2 Site
+# Cài đặt, cấu hình pfSense OpenVPN SSL kết nối  DMZ ZONE trên 3 Site
 
 
 ## 1. Giới thiệu pfSense
