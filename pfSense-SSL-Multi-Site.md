@@ -36,7 +36,7 @@ Site HCM gồm :
 
 Site Đà Nẵng gồm :
 
-- WAN : 192.168.122.17/24 - DHCP
+- WAN : 192.168.122.175/24 - DHCP
 - LAN : GW 192.168.232.254 - Static
 
 Cấu trúc mô hình : Tạo một Server riêng cho các Client, sử dụng Server Routing table để định tuyến
