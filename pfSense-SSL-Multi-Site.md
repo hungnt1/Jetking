@@ -81,7 +81,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 - Do quá đây quá trình làm LAB nên cần cấu hình `Reserved Networks` tại `Interface -> WLAN`
 ![](https://i.imgur.com/xndRyfS.png)
 
-## 2.4. Cấu hình IP trên Site HCM và Đà Nẵng như trên Hà Nội
+## 2.4. Cấu hình IP trên Site HCM và Đà Nẵng theo IP đã quy hoạch
 
 
 
