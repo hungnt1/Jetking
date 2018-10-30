@@ -36,7 +36,7 @@ Site HCM gồm :
 
 Site Đà Nẵng gồm :
 
-- WAN : 192.168.122.174/24 - DHCP
+- WAN : 192.168.122.17/24 - DHCP
 - LAN : GW 192.168.232.254 - Static
 
 Cấu trúc mô hình : Tạo một Server riêng cho các Client, sử dụng Server Routing table để định tuyến
@@ -83,15 +83,7 @@ Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ
 
 ## 2.4. Cấu hình IP trên Site HCM và Đà Nẵng như trên Hà Nội
 
-- Cấu hình IP trên pfSense
-![](https://i.imgur.com/OnXjBXG.png)
 
-
-- Cấu hình IP trên Windows Server 2012
-![](https://i.imgur.com/HAB7eiy.png)
-- Truy cập WEB UI tại `https://192.168.230.254` với user : admin và password : pfsense 
-Sau khi truy cập có thể cài đặt một số thông số cơ bản ( bỏ qua bước này )
-![](https://i.imgur.com/9TMR4bN.png)
 
 - Do quá đây quá trình làm LAB nên cần cấu hình `Reserved Networks` tại `Interface -> WLAN`
 ![](https://i.imgur.com/xndRyfS.png)
