@@ -94,5 +94,49 @@ bash /root/disk.sh
 echo "* * * * * bash /root/disk.sh" | crontab -
 
 }
+
+
+function backup() {
+
+echo "---------------------- Cau hinh Backup ---------------"
+
+echo "--------------------Tai ve Package Gdrive-------------"
+
+#wget -O gdrive https://docs.google.com/uc?id=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA&export=download 
+mv gdrive /usr/bin/gdrive
+chmod 755 /usr/bin/gdrive
+
+
+echo "--------------------Tai ve thanh cong-----------------"
+
+
+echo "-------------------Su dung URL duoi day de lay Token Access"
+gdrive about
+if [  $? != 0  ]
+then
+
+exit 0
+
+fi
+
+echo "---------------------Dang nhap thanh cong ------------"
+
+echo "---------------------Backup Code-----------------------"
+mkdir /tmp/backup_etc
+tar -czf /tmp/backup_etc/backup_etc_`date +%d-%m-%Y`.tar.gz /etc/*
+gdrive upload /tmp/backup_etc/backup_etc_`date +%d-%m-%Y`.tar.gz
+
+echo "Da tao mot ban backup luc :  `date +%d-%m-%Y` " | mail -s "Backup Notification" nguyenhungsync@gmail.com
+
+
+echo "---------------------Backup Thanh Cong----------------"
+
+}
+
+
+backup
+
+
+
 postfix
 job
