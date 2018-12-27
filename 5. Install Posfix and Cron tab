@@ -1,0 +1,98 @@
+#!/bin/bash
+
+function postfix() {
+echo "Khai bao thong tin buoc dau"
+
+echo -e "Dia chi mail cua ban : \c"
+read email
+echo -e "Mat khau mail cua ban : \c"
+read password
+echo -e "Email Kiem thu Postfix : \c"
+read email2
+
+
+
+echo "------------------------------------------ "
+echo "---------------Cai dat Postfix------------ "
+echo "------------------------------------------ "
+list_pack="postfix cyrus-sasl-plain mailx"
+for i in $list_pack
+do
+
+rpm -qa | grep $i >> /dev/null 2>&1
+if [ $? != 0 ]; then
+   echo "Vui long cho trong khi cai dat package"
+   yum install -y  $i > /dev/null 2>&1
+   echo "Da cai dat package $i"
+else
+
+  echo "Package $i da duoc cai dat san tren he thong"
+fi
+
+done
+
+
+echo  "----------Khoi dong dich vu-----------------"
+systemctl restart postfix && systemctl enable postfix
+echo  "---------Khoi dong thanh cong--------------"
+
+echo "----------Cau hinhf Postfix-----------------"
+
+cat <<EOF > /etc/postfix/main.cf
+myhostname = hostname.example.com
+relayhost = [smtp.gmail.com]:587
+smtp_use_tls = yes
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_tls_CAfile = /etc/ssl/certs/ca-bundle.crt
+smtp_sasl_security_options = noanonymous
+smtp_sasl_tls_security_options = noanonymous
+EOF
+
+cat <<EOF > /etc/postfix/sasl_passwd
+
+[smtp.gmail.com]:587 $email:$password
+
+EOF
+
+postmap /etc/postfix/sasl_passwd
+
+chown root:postfix /etc/postfix/sasl_passwd*
+chmod 640 /etc/postfix/sasl_passwd*
+systemctl reload postfix
+
+
+echo "---------Cau hinh thanh cong PostFix---------"
+
+echo "--------Kiem thu POSTFIX---------------------"
+
+echo "This is a test." | mail -s "test message" $email2
+
+echo "-------Da gui mail ve $email. Hay kiem thu ---- " 
+
+}
+
+function job() {
+
+echo "-------------------------------------------------------"
+echo "--------------------Cau hinh Crontab-------------------"
+echo "-------------------------------------------------------"
+
+
+cat <<EOF > /root/disk.sh
+#!/bin/bash
+check_disk=`df -h | grep /dev/sda1 | awk '{ print $5}' | cut -d'%' -f1`
+echo "Disk hien tai la : \$check_disk " | mail -s "Check disk mail"  $email2
+
+
+EOF
+
+chmod +x /root/disk.sh
+bash /root/disk.sh
+
+
+echo "* * * * * bash /root/disk.sh" | crontab -
+
+}
+postfix
+job
