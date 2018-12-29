@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 echo "------------------------------------------------------"
@@ -79,7 +78,7 @@ function wordpress() {
 echo -e "\n"
 echo "2. Cau hinh Wordpress"
 
-echo "- Dang khoi dong "
+echo "- Dang tai ve va cai dat "
 
     rm -rf /tmp/wordpress.zip ||:
     rm -rf /tmp/wordpress ||:
@@ -98,22 +97,25 @@ echo "- Dang khoi dong "
     WPDB=`openssl rand -base64 14`
 
     echo -e "Mat khau ROOT MYSQL : ${MYSQLPW}\n Mat khau MYSQL WORDPRESS : ${WPDB}"  > /root/passwd.txt
-    sed -i -e "s/database_name_here/wordpress/" /tmp/wordpress/wp-config.php
+    sed -i -e "s/database_name_here/wordpress/g" /tmp/wordpress/wp-config.php
 
-    sed -i -e "s/username_here/sysadmin/" /tmp/wordpress/wp-config.php
+    sed -i -e "s/username_here/sysadmin2/g" /tmp/wordpress/wp-config.php
 
-    sed -i -e "s/password_here/$WPDB/" /tmp/wordpress/wp-config.php
+    sed -i -e "s/password_here/$WPDB/g" /tmp/wordpress/wp-config.php
 
 
     /usr/bin/mysqladmin -u root -h localhost password $MYSQLPW &> /dev/null
 
 mysql -u root --password=$MYSQLPW  <<EOF
 DROP DATABASE IF EXISTS wordpress;
-CREATE USER 'sysadmin' IDENTIFIED BY 'mypassword';
 CREATE DATABASE wordpress;
 EOF
-mysql -u root -pzgwhPE3GZo0a8R0A9yo= -e "GRANT ALL PRIVILEGES ON wordpress.* TO sysadmin@localhost  IDENTIFIED BY '"$WPDB"'"
+
+  mysql -u root -p$MYSQLPW -e "GRANT ALL PRIVILEGES ON wordpress.* TO sysadmin2@localhost  IDENTIFIED BY '"$WPDB"'"
   mv -u /tmp/wordpress/* /var/www/html/
+
+
+
 
 echo "- Cau hinh thanh cong"
 
