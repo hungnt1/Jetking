@@ -15,6 +15,9 @@ echo -e "\n"
 echo "1. Kiem tra va cai dat packaget"
 list_pack=(httpd php70-php php70-php-mysqlnd mariadb-server wget unzip)
 list_remove=(nginx mysql-*)
+
+echo "- Dang cai dat R"
+
 yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm &> /dev/null
 yum -y install epel-release &> /dev/null
 
