@@ -1,6 +1,6 @@
 
-
-yum install -y wget httpd php php-mysql php-gd php-xml mariadb-server mariadb php-mbstring
+yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+yum install -y wget php72 php72-php-fpm php72-php-mysqlnd php72-php-opcache php72-php-xml mariadb-server mariadb php72-php-xmlrpc php72-php-gd php72-php-mbstring php72-php-json
 systemctl start mariadb
 systemctl enable mariadb
 mysql -u root <<EOF
