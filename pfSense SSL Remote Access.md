@@ -1,6 +1,6 @@
 
 
-# Cài đặt, cấu hình pfSense VPN Tunnel cho DMZ ZONE
+# Cài đặt, cấu hình pfSense VPN Tunnel 
 
 
 ## 1. Giới thiệu pfSense
