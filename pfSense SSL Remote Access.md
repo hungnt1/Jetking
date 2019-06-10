@@ -154,4 +154,4 @@ B2; Tạo một rule mới `easyrule` truy cập Web UI
 Trong đó : Gói tin đi đến Gateway của Tunnel đã cài đặt từ trước. 
 
 - Kiểm thử `Remote Desktop`  đến Windows Server 
-![](https://i.imgur.com/VogEBK4.png)
+![](https://i.imgur.com/sZ5PkIl.png)
