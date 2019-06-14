@@ -117,9 +117,13 @@ B2; Tạo một rule mới `easyrule` truy cập Web UI
 ![](https://i.imgur.com/lIFMK11.png)
 ### 2.3.4: Xuất cấu hình cho OPENVPN Client
 
-- Tạo User và CE trên pfSense tại `System -> User manager `
-![](https://i.imgur.com/8rcSbAl.png)
-![](https://i.imgur.com/XuL6UgN.png)
+- Kết nối từ Pfsense tơi ADDS
+![](https://i.imgur.com/niLvgiv.png)
+
+- Tạo User trên AD
+![](https://i.imgur.com/vgIdwj4.png)
+
+
 - Cài đặt `OpenVPN` plugin cho pfSense
 ![](https://i.imgur.com/BcdtxMH.png)
 - Export Openvpn Windows Installer cho User `it2` tại `VPN->OpenVPN->Client Export`
